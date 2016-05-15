@@ -266,6 +266,14 @@ th {
   src: url('/fonts/glyphicons-halflings-regular.eot');
   src: url('/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+@font-face {
+  font-family: 'Furore';
+  src: url('/fonts/Furore.otf');
+}
+@font-face {
+    font-family: 'Days';
+    src: url('/fonts/Days.otf');
+}
 .glyphicon {
   position: relative;
   top: 1px;
@@ -1184,7 +1192,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: Days, Furore, Glyphicons Halflings;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;

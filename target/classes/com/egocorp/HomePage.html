@@ -9,160 +9,173 @@
 	<body>
     <div class="clearfix bg-primary">
         <div align="center" class="row">
-            <h2><img src="logo.png" height="40px" width="40px"> NoNameTaskSystem</h2>
+            <h2><img src="logo.png" height="40px" width="40px"> Система заявок "Задачка"</h2>
         </div>
     </div>
-        <table class="center-block" width="98%">
-            <tr>
-                <td width="15%" align="left">
-                    <h3>Фильтры</h3>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <label for="name-filter">Ф.И.О. автора</label>
-                            <div class="input-group input-group-sm col-xs-2">
-                                <input id="name-filter" type="text" class="input-sm" placeholder="Введите имя">
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="h3">Фильтры</p>
+            <div class="row">
+                <div class="col-lg-10">
+                    <label for="name-filter">Ф.И.О. автора</label>
+                    <div class="input-group input-group-sm col-xs-12">
+                        <input id="name-filter" type="text" class="form-control" placeholder="Введите имя">
                                 <span class="input-group-btn">
                                     <button title="Очистить поле" class="btn btn-default" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                                 </span>
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10">
+                    <p></p>
+                    <label for="date-from">Срок выполнения</label>
                     <div class="row">
-                        <div class="col-lg-10">
-                            <p></p>
-                            <label for="date-from">Срок выполнения</label>
-                            <div class="row">
-                                <div class="col-sm-1">
-                                    <label for="date-from">с:</label>
-                                </div>
-                                <div class="col-sm-11">
-                                    <input id="date-from" type="date" class="input-sm">
-                                </div>
-                            </div>
-                            <p></p>
-                            <div class="row">
-                                <div class="col-sm-1">
-                                    <label for="date-to">по:</label>
-                                </div>
-                                <div class="col-sm-11">
-                                    <input id="date-to" type="date" class="input-sm">
-                                </div>
-                            </div>
+                        <div class="col-sm-1">
+                            <label for="date-from">с:</label>
+                        </div>
+                        <div class="col-sm-11">
+                            <input id="date-from" type="date" class="form-control">
                         </div>
                     </div>
                     <p></p>
                     <div class="row">
-                        <div class="col-lg-11">
-                            <input id="show-all" type="checkbox" checked>
-                            <label for="show-all">Отображать выполненные</label>
+                        <div class="col-sm-1">
+                            <label for="date-to">по:</label>
+                        </div>
+                        <div class="col-sm-11">
+                            <input id="date-to" type="date" class="form-control">
                         </div>
                     </div>
-                </td>
-                <td width="85%">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p></p>
-                            <table width="100%">
-                                <tr>
-                                    <td width="50%">
-                                        <button title="Добавить заявку" class="btn btn-default" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Добавить заявку</button>
-                                    </td>
-                                    <td width="50%">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Поиск по тексту">
+                </div>
+            </div>
+            <p></p>
+            <div class="row">
+                <div class="col-lg-11">
+                    <input id="show-all" type="checkbox" checked>
+                    <label for="show-all">Отображать выполненные</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p></p>
+                    <table width="100%">
+                        <tr>
+                            <td width="50%">
+                                <button title="Добавить заявку" class="btn btn-default" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Добавить заявку</button>
+                            </td>
+                            <td width="50%">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Поиск по тексту">
                                             <span class="input-group-btn">
                                                 <button title="Отфильтровать по тексту" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                                                 <button title="Очистить поле" class="btn btn-default" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                                             </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <p></p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-hover table-condense table-bordered">
+                        <thead>
+                        <tr>
+                            <th width="20%">Срок исполнения <span class="glyphicon glyphicon-arrow-down pull-right"></span></th>
+                            <th width="30%">Ф.И.О. автора <span class="glyphicon glyphicon glyphicon-sort pull-right"></span></th>
+                            <th width="50%">Описание</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                20.05.2016
+                            </td>
+                            <td>
+                                Курбатов Максим Сергеевич
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        Реилазовать дизайн главной страницы
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="btn-group btn-group-xs pull-right" align="right" role="group" aria-label="...">
+                                            <button title="Отметить как выполненную" type="button" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
+                                            <button title="Добавить комментарий" type="button" class="btn btn-default"><span class="glyphicon glyphicon-comment"></span></button>
                                         </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <p></p>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <table class="table table-hover table-condense table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th width="20%">Срок исполнения <span class="glyphicon glyphicon-arrow-down pull-right"></span></th>
-                                        <th width="30%">Ф.И.О. автора <span class="glyphicon glyphicon glyphicon-sort pull-right"></span></th>
-                                        <th width="45%">Описание</th>
-                                        <th width="5%"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            20.05.2016
-                                        </td>
-                                        <td>
-                                            Курбатов Максим Сергеевич
-                                        </td>
-                                        <td>
-                                            Реилазовать дизайн главной страницы
-                                        </td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" align="right" role="group" aria-label="...">
-                                                <button title="Отметить как выполненную" type="button" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
-                                                <button title="Добавить комментарий" type="button" class="btn btn-default"><span class="glyphicon glyphicon-comment"></span></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="warning">
-                                        <td>
-                                            15.05.2016 <span class="label label-warning">Срочная</span>
-                                        </td>
-                                        <td>
-                                            Курбатов Максим Сергеевич
-                                        </td>
-                                        <td>
-                                            Нарисовать дизайн главной страницы
-                                        </td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" align="right" role="group" aria-label="...">
-                                                <button title="Отметить как выполненную" type="button" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
-                                                <button title="Добавить комментарий" type="button" class="btn btn-default"><span class="glyphicon glyphicon-comment"></span></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="danger">
-                                        <td>
-                                            13.05.2016 <span class="label label-danger">Просроченная</span>
-                                        </td>
-                                        <td>
-                                            Курбатов Максим Сергеевич
-                                        </td>
-                                        <td>
-                                            Просто задача, чтобы показать как выглядит статус "Просроченная"
-                                        </td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" align="right" role="group" aria-label="...">
-                                                <button title="Отметить как выполненную" type="button" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
-                                                <button title="Добавить комментарий" type="button" class="btn btn-default"><span class="glyphicon glyphicon-comment"></span></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="success">
-                                        <td>
-                                            13.05.2016  <span class="label label-success">Выполненная </span>
-                                        </td>
-                                        <td>
-                                            Курбатов Максим Сергеевич
-                                        </td>
-                                        <td>
-                                            Приехать на встречу
-                                        </td>
-                                        <td>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="warning">
+                            <td>
+                                15.05.2016 <span class="label label-warning">Срочная</span>
+                            </td>
+                            <td>
+                                Курбатов Максим Сергеевич
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        Нарисовать дизайн главной страницы
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="btn-group btn-group-xs pull-right" align="right" role="group" aria-label="...">
+                                            <button title="Отметить как выполненную" type="button" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
+                                            <button title="Добавить комментарий" type="button" class="btn btn-default"><span class="glyphicon glyphicon-comment"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="danger">
+                            <td>
+                                13.05.2016 <span class="label label-danger">Просроченная</span>
+                            </td>
+                            <td>
+                                Курбатов Максим Сергеевич
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        Просто задача, чтобы показать как выглядит статус "Просроченная"
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="btn-group btn-group-xs pull-right" align="right" role="group" aria-label="...">
+                                            <button title="Отметить как выполненную" type="button" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
+                                            <button title="Добавить комментарий" type="button" class="btn btn-default"><span class="glyphicon glyphicon-comment"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="success">
+                            <td>
+                                13.05.2016  <span class="label label-success">Выполненная </span>
+                            </td>
+                            <td>
+                                Курбатов Максим Сергеевич
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        Приехать на встречу
+                                    </div>
+                                    <div class="col-sm-2">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 	</body>
 </html>
