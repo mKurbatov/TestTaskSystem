@@ -1,6 +1,9 @@
 package com.egocorp;
 
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
+import org.apache.wicket.extensions.markup.html.repeater.data.table.filter.FilterForm;
+import org.apache.wicket.markup.html.form.CheckBox;
+import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.*;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
@@ -25,10 +28,18 @@ public class HomePage extends WebPage {
         columns.add(new MyPropertyColumn(new Model("Описание"), "description"));
 
         MyDataTable table = new MyDataTable("datatable", columns, taskProvider, 10);
-
+        table.setOutputMarkupId(true);
         table.addTopToolbar(new HeadersToolbar<>(table, taskProvider));
 
         add(table);
+
+        FilterForm<TaskFilter> filterForm = new FilterForm("filterForm", taskProvider);
+
+        filterForm.add(new TextField<>("dateFrom", PropertyModel.of(taskProvider, "filterState.dateFrom")));
+        filterForm.add(new TextField<>("dateTo", PropertyModel.of(taskProvider, "filterState.dateTo")));
+        filterForm.add(new TextField<>("authorName", PropertyModel.of(taskProvider, "filterState.authorName")));
+
+        add(filterForm);
 
     }
 }
