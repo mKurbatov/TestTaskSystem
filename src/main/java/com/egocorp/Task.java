@@ -56,7 +56,7 @@ public class Task implements Serializable {
             tasks.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("19.05.2016"), "Курбатов Максим Сергеевич", "Поздравить жену с годовщиной"));
             tasks.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("20.05.2016"), "Курбатов Максим Сергеевич", "Купить кошке еды", true));
             tasks.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("21.05.2016"), "Курбатов Максим Сергеевич", "Помочь отцу с ремонтом"));
-            tasks.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("22.05.2016"), "Курбатов Максим Сергеевич", "Дочитать книгу"));
+            tasks.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("22.05.2016"), "Курбатова Елена Александровна", "Дочитать книгу"));
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -22,7 +22,13 @@ public class MyPropertyColumn extends PropertyColumn {
     public void populateItem(Item item, String componentId, IModel rowModel) {
         IModel model = this.getDataModel(rowModel);
         Task task = (Task) rowModel.getObject();
-        item.add(new Component[]{new PLabel(componentId, model, task.isDone())});
+        if(!model.toString().contains("description")) {
+            item.add(new Component[]{new PLabel(componentId, model, task.isDone())});
+        }
+        else
+        {
+            item.add(new Component[]{new PButton(componentId, model)});
+        }
 
     }
 }
