@@ -33,6 +33,18 @@ public class Task implements Serializable {
         return tasks.size();
     }
 
+    public boolean isOverdue()
+    {
+        Date date = new Date();
+        return deadLine.compareTo(date) < 0;
+    }
+
+    public boolean isInDanger()
+    {
+        Date date = new Date();
+        return (date.getTime() - deadLine.getTime()) < 86400000;
+    }
+
     static {
         try {
             tasks.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("13.05.2016"), "Курбатов Максим Сергеевич", "Приехать на встречу"));
