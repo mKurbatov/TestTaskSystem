@@ -7,8 +7,6 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
 
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -18,8 +16,8 @@ public class TaskProvider extends SortableDataProvider {
     class SortableDataProviderComparator implements Comparator<Task>, Serializable {
         public int compare(final Task o1, final Task o2) {
 
-            PropertyModel<Comparable> model1 = new PropertyModel<Comparable>(o1, String.valueOf(getSort().getProperty()));
-            PropertyModel<Comparable> model2 = new PropertyModel<Comparable>(o2, String.valueOf(getSort().getProperty()));
+            PropertyModel<Comparable> model1 = new PropertyModel<>(o1, String.valueOf(getSort().getProperty()));
+            PropertyModel<Comparable> model2 = new PropertyModel<>(o2, String.valueOf(getSort().getProperty()));
 
             int result = model1.getObject().compareTo(model2.getObject());
 
@@ -43,8 +41,9 @@ public class TaskProvider extends SortableDataProvider {
     public Iterator<Task> iterator(final int first, final int count) {
         // In this example the whole list gets copied, sorted and sliced; in real applications typically your database would deliver a sorted and limited list
 
+
         // Get the data
-        List<Task> newList = new ArrayList<Task>(list);
+        List<Task> newList = new ArrayList<>(list);
 
         // Sort the data
         Collections.sort(newList, comparator);
@@ -64,7 +63,7 @@ public class TaskProvider extends SortableDataProvider {
 
     @Override
     public Iterator iterator(long l, long l1) {
-        return list.iterator();
+        return iterator((int) l, (int) l1);
     }
 
     @Override
