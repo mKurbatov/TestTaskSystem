@@ -21,7 +21,6 @@ public class TaskProvider extends SortableDataProvider {
             PropertyModel<Comparable> model1 = new PropertyModel<Comparable>(o1, String.valueOf(getSort().getProperty()));
             PropertyModel<Comparable> model2 = new PropertyModel<Comparable>(o2, String.valueOf(getSort().getProperty()));
 
-
             int result = model1.getObject().compareTo(model2.getObject());
 
             if (!getSort().isAscending()) {
@@ -33,7 +32,7 @@ public class TaskProvider extends SortableDataProvider {
 
     }
 
-    private List<Task> list = new ArrayList<Task>();
+    private List<Task> list = new ArrayList<>();
     private SortableDataProviderComparator comparator = new SortableDataProviderComparator();
 
     public TaskProvider() {
@@ -41,16 +40,16 @@ public class TaskProvider extends SortableDataProvider {
         setSort("deadLine", SortOrder.ASCENDING);
 
         try {
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("13.05.2016"), "Курбатов Максим Сергеевич", "Приехать на встречу"));
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("14.05.2016"), "Курбатов Максим Сергеевич", "Просто задача, чтобы показать как выглядит статус \"Просроченная\""));
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("15.05.2016"), "Курбатов Максим Сергеевич", "Нарисовать дизайн главной страницы", true));
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("16.05.2016"), "Курбатов Максим Сергеевич", "Реализовать дизайн главной страницы", true));
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("17.05.2016"), "Курбатов Максим Сергеевич", "Реализовать вторую часть тествого задания"));
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("18.05.2016"), "Курбатов Максим Сергеевич", "Сдать тестовое задание в срок"));
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("19.05.2016"), "Курбатов Максим Сергеевич", "Поздравить жену с годовщиной"));
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("20.05.2016"), "Курбатов Максим Сергеевич", "Купить кошке еды", true));
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("21.05.2016"), "Курбатов Максим Сергеевич", "Помочь отцу с ремонтом"));
-            list.add(new Task(new SimpleDateFormat("dd.mm.yyyy").parse("22.05.2016"), "Курбатов Максим Сергеевич", "Дочитать книгу"));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("13.05.2016"), "Курбатов Максим Сергеевич", "Приехать на встречу"));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("14.05.2016"), "Курбатов Максим Сергеевич", "Просто задача, чтобы показать как выглядит статус \"Просроченная\""));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("15.05.2016"), "Курбатов Максим Сергеевич", "Нарисовать дизайн главной страницы", true));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("16.05.2016"), "Курбатов Максим Сергеевич", "Реализовать дизайн главной страницы", true));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("17.05.2016"), "Курбатов Максим Сергеевич", "Реализовать вторую часть тествого задания"));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("18.05.2016"), "Курбатов Максим Сергеевич", "Сдать тестовое задание в срок"));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("19.05.2016"), "Курбатов Максим Сергеевич", "Поздравить жену с годовщиной"));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("20.05.2016"), "Курбатов Максим Сергеевич", "Купить кошке еды", true));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("21.05.2016"), "Курбатов Максим Сергеевич", "Помочь отцу с ремонтом"));
+            list.add(new Task(new SimpleDateFormat("dd.MM.yyyy").parse("22.05.2016"), "Курбатов Максим Сергеевич", "Дочитать книгу"));
         } catch (ParseException e) {
             e.printStackTrace();
         }
