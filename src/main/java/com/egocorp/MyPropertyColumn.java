@@ -27,7 +27,12 @@ public class MyPropertyColumn extends PropertyColumn {
         }
         else
         {
-            item.add(new Component[]{new PButton(componentId, model)});
+            if(!task.isDone()) {
+                item.add(new Component[]{new PButton(componentId, model, task)});
+            }
+            else {
+                item.add(new Component[]{new PLabel(componentId, model, task.isDone())});
+            }
         }
 
     }
