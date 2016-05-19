@@ -27,7 +27,7 @@ public class TextPropertyColumn extends PropertyColumn {
         else
         {
             if(!task.isDone()) {
-                item.add(new Component[]{new PButton(componentId, model, task)});
+                item.add(new Component[]{new TaskServicePanel(componentId, model, task)});
             }
             else {
                 item.add(new Component[]{new PLabel(componentId, model, task.isDone())});
