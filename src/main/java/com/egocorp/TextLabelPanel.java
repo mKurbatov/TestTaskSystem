@@ -15,29 +15,34 @@ public class TextLabelPanel extends Panel
 {
     public TextLabelPanel(String id, IModel<?> model, boolean done) {
         super(id, model);
-        Label label1 = new Label("text", model);
-        Label label2 = new Label("status");
+        Label text = new Label("text", model);
+        String statusText = null;
+        String statusCssClass = null;
 
-        if(model.getObject().getClass() == Date.class) {
+        if(model.getObject() instanceof Date) {
             Date taskDate = (Date) model.getObject();
             Date currentDate = new Date();
 
             if(done)
             {
-                label2 = new Label("status", new Model("Выполненная"));
-                label2.add(new AttributeAppender("class", "label label-success"));
+                statusText = "Выполненная";
+                statusCssClass = "label label-success";
             }
             else if (taskDate.compareTo(currentDate) < 0) {
                 if ((currentDate.getTime() - taskDate.getTime()) < 86400000) {
-                    label2 = new Label("status", new Model("Срочная"));
-                    label2.add(new AttributeAppender("class", "label label-warning"));
+                    statusText = "Срочная";
+                    statusCssClass = "label label-warning";
                 } else {
-                    label2 = new Label("status", new Model("Просроченная"));
-                    label2.add(new AttributeAppender("class", "label label-danger"));
+                    statusText = "Просроченная";
+                    statusCssClass = "label label-danger";
                 }
             }
         }
-        add(label1);
-        add(label2);
+
+        Label status = new Label("status", new Model(statusText));
+        status.add(new AttributeAppender("class", statusCssClass));
+
+        add(text);
+        add(status);
     }
 }

@@ -16,21 +16,24 @@ public class TaskDataTable extends DataTable {
     protected Item newRowItem(String id, int index, IModel model) {
         Item row = super.newRowItem(id, index, model);
         Task tempTask = (Task) row.getModelObject();
+        String cssClass = null;
         if(tempTask.isDone())
         {
-            row.add(new AttributeAppender("class", "success"));
+            cssClass = "success";
         }
         else if(tempTask.isOverdue())
         {
             if (tempTask.isInDanger())
             {
-                row.add(new AttributeAppender("class", "warning"));
+                cssClass = "warning";
             }
             else
             {
-                row.add(new AttributeAppender("class", "danger"));
+                cssClass = "danger";
             }
         }
+        row.add(new AttributeAppender("class", cssClass));
+
         return row;
     }
 

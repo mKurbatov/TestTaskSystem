@@ -29,7 +29,7 @@ public class FormAddTask extends Form {
 
     @Override
     protected final void onSubmit() {
-        List<Task> l = Task.getTasks();
+        List<Task> l = TaskProvider.getList();
         try {
             l.add(new Task(l.size(), new SimpleDateFormat("dd.MM.yyyy").parse(deadLine), author, description));
             deadLine = "";
