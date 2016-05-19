@@ -13,6 +13,9 @@ public class TaskFilter implements Serializable {
     private boolean showDone;
     private String  description;
 
+    public TaskFilter()
+    {}
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -31,9 +34,6 @@ public class TaskFilter implements Serializable {
         return showDone;
     }
 
-    public TaskFilter()
-    {}
-
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
     }
@@ -47,14 +47,17 @@ public class TaskFilter implements Serializable {
     {
         return dateFrom;
     }
+
     public void setDateFrom(Date dateFrom)
     {
         this.dateFrom = dateFrom;
     }
+
     public Date getDateTo()
     {
         return dateTo;
     }
+
     public void setDateTo(Date dateTo)
     {
         this.dateTo = dateTo;

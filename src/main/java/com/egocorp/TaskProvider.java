@@ -16,32 +16,6 @@ import java.util.*;
  * Created by FormsDeveloper on 5/17/16.
  */
 public class TaskProvider extends SortableDataProvider implements IFilterStateLocator<TaskFilter> {
-    @Override
-    public TaskFilter getFilterState() {
-        return taskFilter;
-    }
-
-    @Override
-    public void setFilterState(TaskFilter taskFilter) {
-        this.taskFilter = taskFilter;
-    }
-
-    class SortableDataProviderComparator implements Comparator<Task>, Serializable {
-        public int compare(final Task o1, final Task o2) {
-
-            PropertyModel<Comparable> model1 = new PropertyModel<>(o1, String.valueOf(getSort().getProperty()));
-            PropertyModel<Comparable> model2 = new PropertyModel<>(o2, String.valueOf(getSort().getProperty()));
-
-            int result = model1.getObject().compareTo(model2.getObject());
-
-            if (!getSort().isAscending()) {
-                result = -result;
-            }
-
-            return result;
-        }
-
-    }
 
     private static List<Task> list = new ArrayList<>();
     private SortableDataProviderComparator comparator = new SortableDataProviderComparator();
@@ -69,9 +43,21 @@ public class TaskProvider extends SortableDataProvider implements IFilterStateLo
         }
     }
 
-    public static List<Task> getList()
-    {
-        return list;
+    class SortableDataProviderComparator implements Comparator<Task>, Serializable {
+        public int compare(final Task o1, final Task o2) {
+
+            PropertyModel<Comparable> model1 = new PropertyModel<>(o1, String.valueOf(getSort().getProperty()));
+            PropertyModel<Comparable> model2 = new PropertyModel<>(o2, String.valueOf(getSort().getProperty()));
+
+            int result = model1.getObject().compareTo(model2.getObject());
+
+            if (!getSort().isAscending()) {
+                result = -result;
+            }
+
+            return result;
+        }
+
     }
 
     public Iterator<Task> iterator(final int first, final int count) {
@@ -134,6 +120,11 @@ public class TaskProvider extends SortableDataProvider implements IFilterStateLo
         };
     }
 
+    public static List<Task> getList()
+    {
+        return list;
+    }
+
     @Override
     public Iterator iterator(long l, long l1) {
         return iterator((int) l, (int) l1);
@@ -142,5 +133,15 @@ public class TaskProvider extends SortableDataProvider implements IFilterStateLo
     @Override
     public long size() {
         return list.size();
+    }
+
+    @Override
+    public TaskFilter getFilterState() {
+        return taskFilter;
+    }
+
+    @Override
+    public void setFilterState(TaskFilter taskFilter) {
+        this.taskFilter = taskFilter;
     }
 }

@@ -19,5 +19,4 @@ public class ChangeBehavior extends AjaxFormComponentUpdatingBehavior {
         ajaxRequestTarget.add(comp);
     }
 
-
 }

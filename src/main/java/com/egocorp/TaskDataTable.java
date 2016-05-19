@@ -12,11 +12,17 @@ import java.util.List;
  * Created by FormsDeveloper on 5/18/16.
  */
 public class TaskDataTable extends DataTable {
+
+    public TaskDataTable(String id, List list, IDataProvider dataProvider, long rowsPerPage) {
+        super(id, list, dataProvider, rowsPerPage);
+    }
+
     @Override
     protected Item newRowItem(String id, int index, IModel model) {
         Item row = super.newRowItem(id, index, model);
         Task tempTask = (Task) row.getModelObject();
         String cssClass = null;
+
         if(tempTask.isDone())
         {
             cssClass = "success";
@@ -32,12 +38,9 @@ public class TaskDataTable extends DataTable {
                 cssClass = "danger";
             }
         }
+
         row.add(new AttributeAppender("class", cssClass));
 
         return row;
-    }
-
-    public TaskDataTable(String id, List list, IDataProvider dataProvider, long rowsPerPage) {
-        super(id, list, dataProvider, rowsPerPage);
     }
 }

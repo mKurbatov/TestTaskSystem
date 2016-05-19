@@ -6,18 +6,20 @@ import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.IModel;
 
 /**
- * Created by FormsDeveloper on 5/18/16.
+ * Created by maxim on 5/19/16.
  */
-public class DatePropertyColumn extends PropertyColumn {
-
-    public DatePropertyColumn(IModel displayModel, Object sortProperty, String propertyExpression) {
+public class AuthorPropertyColumn extends PropertyColumn {
+    public AuthorPropertyColumn(IModel displayModel, Object sortProperty, String propertyExpression) {
         super(displayModel, sortProperty, propertyExpression);
+    }
+
+    public AuthorPropertyColumn(IModel displayModel, String propertyExpression) {
+        super(displayModel, propertyExpression);
     }
 
     @Override
     public void populateItem(Item item, String componentId, IModel rowModel) {
         IModel model = this.getDataModel(rowModel);
-        Task task = (Task) rowModel.getObject();
-        item.add(new Component[]{new TextLabelPanel(componentId, model, task.isDone())});
+        item.add(new Component[]{new TextLabelPanel(componentId, model, true)});
     }
 }

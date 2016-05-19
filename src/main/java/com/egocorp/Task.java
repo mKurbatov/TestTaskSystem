@@ -17,6 +17,14 @@ public class Task implements Serializable {
     private boolean done;
     private static ArrayList<Task> tasks = new ArrayList<>();
 
+    public Task(int id, Date deadLine, String author, String description)
+    {
+        this.id = id;
+        this.deadLine = deadLine;
+        this.author = author;
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }
@@ -39,19 +47,6 @@ public class Task implements Serializable {
     {
         Date date = new Date();
         return (date.getTime() - deadLine.getTime()) < 86400000;
-    }
-
-    public Task(int id, Date deadLine, String author, String description)
-    {
-        this.id = id;
-        this.deadLine = deadLine;
-        this.author = author;
-        this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return deadLine + " [" + author + "]: " + description;
     }
 
     public void setDeadLine(Date deadLine) {
@@ -79,5 +74,10 @@ public class Task implements Serializable {
     public String getDescription()
     {
         return description;
+    }
+
+    @Override
+    public String toString() {
+        return deadLine + " [" + author + "]: " + description;
     }
 }

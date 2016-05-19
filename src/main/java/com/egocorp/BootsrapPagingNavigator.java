@@ -1,7 +1,6 @@
 package com.egocorp;
 
 import org.apache.wicket.markup.html.navigation.paging.IPageable;
-import org.apache.wicket.markup.html.navigation.paging.IPagingLabelProvider;
 import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 
 /**
@@ -10,9 +9,5 @@ import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 public class BootsrapPagingNavigator extends PagingNavigator {
     public BootsrapPagingNavigator(String id, IPageable pageable) {
         super(id, pageable);
-    }
-
-    public BootsrapPagingNavigator(String id, IPageable pageable, IPagingLabelProvider labelProvider) {
-        super(id, pageable, labelProvider);
     }
 }

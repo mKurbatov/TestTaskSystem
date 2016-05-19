@@ -17,15 +17,12 @@ public class HomePage extends WebPage {
 	public HomePage(final PageParameters parameters) {
 		super(parameters);
 
-		//add(new Label("version", getApplication().getFrameworkSettings().getVersion()));
-
-		// TODO Add your page's components here
 		final TaskProvider taskProvider = new TaskProvider();
 
         List<IColumn> columns = new ArrayList<>();
         columns.add(new DatePropertyColumn(new Model("Срок выполнения"), "deadLine", "deadLine"));
-        columns.add(new TextPropertyColumn(new Model("Ф.И.О. автора"), "author", "author"));
-        columns.add(new TextPropertyColumn(new Model("Описание"), "description"));
+        columns.add(new AuthorPropertyColumn(new Model("Ф.И.О. автора"), "author", "author"));
+        columns.add(new DescriptionPropertyColumn(new Model("Описание"), "description"));
 
         final TaskDataTable table = new TaskDataTable("datatable", columns, taskProvider, 10);
         table.setOutputMarkupId(true);
@@ -55,11 +52,12 @@ public class HomePage extends WebPage {
         filterFormLeft.add(authorName);
         filterFormLeft.add(showDone);
         filterFormDesc.add(description);
+
         add(filterFormLeft);
         add(filterFormDesc);
 
-        FormAddTask form = new FormAddTask("FormAddTask");
+        FormAddTask formAddTask = new FormAddTask("FormAddTask");
 
-        add(form);
+        add(formAddTask);
     }
 }
