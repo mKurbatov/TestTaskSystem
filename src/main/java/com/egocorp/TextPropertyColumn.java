@@ -22,7 +22,7 @@ public class TextPropertyColumn extends PropertyColumn {
         IModel model = this.getDataModel(rowModel);
         Task task = (Task) rowModel.getObject();
         if(!model.toString().contains("description")) {
-            item.add(new Component[]{new PLabel(componentId, model, true)});
+            item.add(new Component[]{new TextLabelPanel(componentId, model, true)});
         }
         else
         {
@@ -30,7 +30,7 @@ public class TextPropertyColumn extends PropertyColumn {
                 item.add(new Component[]{new TaskServicePanel(componentId, model, task)});
             }
             else {
-                item.add(new Component[]{new PLabel(componentId, model, task.isDone())});
+                item.add(new Component[]{new TextLabelPanel(componentId, model, task.isDone())});
             }
         }
     }

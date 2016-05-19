@@ -22,6 +22,6 @@ public class DatePropertyColumn extends PropertyColumn {
     public void populateItem(Item item, String componentId, IModel rowModel) {
         IModel model = this.getDataModel(rowModel);
         Task task = (Task) rowModel.getObject();
-        item.add(new Component[]{new PLabel(componentId, model, task.isDone())});
+        item.add(new Component[]{new TextLabelPanel(componentId, model, task.isDone())});
     }
 }

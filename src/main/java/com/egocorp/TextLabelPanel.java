@@ -11,9 +11,9 @@ import java.util.Date;
 /**
  * Created by FormsDeveloper on 5/18/16.
  */
-public class PLabel extends Panel
+public class TextLabelPanel extends Panel
 {
-    public PLabel(String id, IModel<?> model, boolean done) {
+    public TextLabelPanel(String id, IModel<?> model, boolean done) {
         super(id, model);
         Label label1 = new Label("text", model);
         Label label2 = new Label("status");
