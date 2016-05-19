@@ -58,7 +58,7 @@ public class HomePage extends WebPage {
         add(filterFormLeft);
         add(filterFormDesc);
 
-        FormAdd form = new FormAdd("FormAdd");
+        FormAddTask form = new FormAddTask("FormAddTask");
 
         add(form);
     }

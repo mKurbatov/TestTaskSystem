@@ -11,13 +11,13 @@ import java.util.List;
 /**
  * Created by FormsDeveloper on 5/19/16.
  */
-public class FormAdd extends Form {
+public class FormAddTask extends Form {
 
     private String author;
     private String deadLine;
     private String description;
 
-    public FormAdd(String id) {
+    public FormAddTask(String id) {
         super(id);
 
         setDefaultModel(new CompoundPropertyModel(this));
