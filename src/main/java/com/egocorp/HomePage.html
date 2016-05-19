@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-lg-3" id="filter">
             <h3>Фильтры</h3>
-            <form wicket:id = "filterForm">
+            <form wicket:id="filterForm">
                 <div class="row">
                     <div class="col-lg-10">
                         <label for="name-filter">Ф.И.О. автора</label>
@@ -33,12 +33,12 @@
                     <div id="no-marg" class="col-lg-10">
                         <div class="row">
                             <div class="col-sm-12">
-                                <label for="date-from" wicket:id="dateFrom">Срок выполнения с:</label>
+                                <label for="date-from">Срок выполнения с:</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <input id="date-from" wicket:id="dateTo" type="date" class="form-control">
+                                <input id="date-from" wicket:id="dateFrom" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -48,14 +48,14 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <input id="date-to" type="date" class="form-control">
+                                <input id="date-to" wicket:id="dateTo" type="text" class="form-control">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-1">
-                        <input id="show-all" type="checkbox" checked>
+                        <input id="show-all" type="checkbox" wicket:id = "showDone">
                     </div>
                     <div class="col-sm-11">
                         <label for="show-all">Отображать выполненные</label>
@@ -90,13 +90,15 @@
                         </ul>
                 </div>
                 <div class="col-lg-6">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Поиск по тексту">
-                        <div class="input-group-btn">
-                            <button title="Отфильтровать по тексту" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                            <button title="Очистить поле" class="btn btn-default" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                    <form wicket:id="filterForm2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" wicket:id = "description" placeholder="Поиск по тексту">
+                            <div class="input-group-btn">
+                                <button title="Отфильтровать по тексту" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                <button title="Очистить поле" class="btn btn-default" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="row">

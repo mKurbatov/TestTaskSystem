@@ -11,6 +11,16 @@ public class TaskFilter implements Serializable {
     private Date dateTo;
     private String authorName;
     private boolean showDone;
+    private String  description;
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+
+        return description;
+    }
 
     public void setShowDone(boolean showDone) {
         this.showDone = showDone;

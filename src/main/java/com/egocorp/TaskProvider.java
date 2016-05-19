@@ -58,13 +58,14 @@ public class TaskProvider extends SortableDataProvider implements IFilterStateLo
         List<Task> newList = new ArrayList<>(list);
 
         //Filter the data
-        newList = (List<Task>) filterList(newList).subList(first, (first + count)).iterator();
+        newList = filterList(newList);
+        int newCount = count > newList.size() ? newList.size() : count;
 
         // Sort the data
         Collections.sort(newList, comparator);
 
         // Return the data for the current page - this can be determined only after sorting
-        return newList.subList(first, first + count).iterator();
+        return newList.subList(first, first + newCount).iterator();
     }
 
     private List<Task> filterList(List<Task> l)
@@ -86,6 +87,11 @@ public class TaskProvider extends SortableDataProvider implements IFilterStateLo
             }
 
             if(taskFilter.getAuthorName() != null && !t.getAuthor().toLowerCase().contains(taskFilter.getAuthorName().toLowerCase()))
+            {
+                continue;
+            }
+
+            if(taskFilter.getDescription() != null && !t.getDescription().toLowerCase().contains(taskFilter.getDescription().toLowerCase()))
             {
                 continue;
             }
