@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Система заявок "Задачка"</title>
     <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="./bootstrap.css" type="text/css" media="screen" title="Stylesheet2" />
+    <link rel="stylesheet" href="./bootstrap.css" type="text/css" media="screen" title="StylesheetMain" />
     <script src="./js/jquery-1.12.3.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
 </head>
@@ -23,9 +23,9 @@
                         <label for="name-filter">Ф.И.О. автора</label>
                         <div class="input-group input-group-sm col-xs-12">
                             <input id="name-filter" wicket:id="authorName" type="text" class="form-control" placeholder="Введите имя">
-                                <span class="input-group-btn">
-                                    <button title="Очистить поле" class="btn btn-default" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                                </span>
+                            <span class="input-group-btn">
+                                <button title="Очистить поле" data-toggle="tooltip" class="btn btn-default" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -39,14 +39,13 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <div class='input-group date' id='datetimepicker2'>
+                                    <div class='input-group input-group-sm col-xs-12'>
                                         <input id="date-from" class="form-control" wicket:id="dateFrom" type="text"/>
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
+                                        <span class="input-group-btn">
+                                            <button title="Выбрать дату" data-toggle="tooltip" class="btn btn-default" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+                                        </span>
                                     </div>
                                 </div>
-                                <!--<input id="date-from" wicket:id="dateFrom" type="text" class="form-control">-->
                             </div>
                         </div>
                         <div class="row">
@@ -56,7 +55,14 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <input id="date-to" wicket:id="dateTo" type="text" class="form-control">
+                                <div class="form-group">
+                                    <div class='input-group input-group-sm col-xs-12'>
+                                        <input id="date-to" wicket:id="dateTo" type="text" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button title="Выбрать дату" data-toggle="tooltip" class="btn btn-default" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
