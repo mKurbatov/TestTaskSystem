@@ -34,7 +34,7 @@ public class HomePage extends WebPage {
 
         add(table);
 
-        add(new PagingNavigator("navigator", table));
+        add(new MyPagingNavigator("navigator", table));
 
         FilterForm<TaskFilter> filterFormLeft = new FilterForm("filterFormLeft", taskProvider);
         FilterForm<TaskFilter> filterFormDesc = new FilterForm("filterFormDesc", taskProvider);

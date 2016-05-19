@@ -15,8 +15,8 @@ public class PLabel extends Panel
 {
     public PLabel(String id, IModel<?> model, boolean done) {
         super(id, model);
-        Label label1 = new Label(id + "1", model);
-        Label label2 = new Label(id + "2");
+        Label label1 = new Label("text", model);
+        Label label2 = new Label("status");
 
         if(model.getObject().getClass() == Date.class) {
             Date taskDate = (Date) model.getObject();
@@ -24,15 +24,15 @@ public class PLabel extends Panel
 
             if(done)
             {
-                label2 = new Label(id + "2", new Model("Выполненная"));
+                label2 = new Label("status", new Model("Выполненная"));
                 label2.add(new AttributeAppender("class", "label label-success"));
             }
             else if (taskDate.compareTo(currentDate) < 0) {
                 if ((currentDate.getTime() - taskDate.getTime()) < 86400000) {
-                    label2 = new Label(id + "2", new Model("Срочная"));
+                    label2 = new Label("status", new Model("Срочная"));
                     label2.add(new AttributeAppender("class", "label label-warning"));
                 } else {
-                    label2 = new Label(id + "2", new Model("Просроченная"));
+                    label2 = new Label("status", new Model("Просроченная"));
                     label2.add(new AttributeAppender("class", "label label-danger"));
                 }
             }

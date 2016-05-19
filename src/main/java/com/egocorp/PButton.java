@@ -13,7 +13,7 @@ public class PButton extends Panel {
     Task task;
     public PButton(String id, IModel model, final Task task) {
         super(id, model);
-        Label label1 = new Label(id + "1", model);
+        Label label1 = new Label("desc", model);
         add(label1);
         Form form = new Form("doTask"){
             @Override
