@@ -3,8 +3,8 @@ package com.egocorp;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.filter.FilterForm;
 import org.apache.wicket.markup.html.form.CheckBox;
-import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 import org.apache.wicket.model.*;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
@@ -33,6 +33,8 @@ public class HomePage extends WebPage {
         table.addTopToolbar(new HeadersToolbar<>(table, taskProvider));
 
         add(table);
+
+        add(new PagingNavigator("navigator", table));
 
         FilterForm<TaskFilter> filterFormLeft = new FilterForm("filterFormLeft", taskProvider);
         FilterForm<TaskFilter> filterFormDesc = new FilterForm("filterFormDesc", taskProvider);

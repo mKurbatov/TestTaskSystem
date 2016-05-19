@@ -77,25 +77,8 @@
                     <button title="Добавить заявку" class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Добавить заявку</button>
                 </div>
                 <div class="col-lg-4">
-                        <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">6</a></li>
-                            <li><a href="#">7</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
+                    <ul class="pagination" wicket:id = "navigator"></ul>
+                    <!--<span wicket:id = "navigator"></span>-->
                 </div>
                 <div class="col-lg-6">
                     <form wicket:id="filterFormDesc">
