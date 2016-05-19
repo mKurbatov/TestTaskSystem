@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by FormsDeveloper on 5/18/16.
  */
-public class MyDataTable extends DataTable {
+public class TaskDataTable extends DataTable {
     @Override
     protected Item newRowItem(String id, int index, IModel model) {
         Item row = super.newRowItem(id, index, model);
@@ -34,7 +34,7 @@ public class MyDataTable extends DataTable {
         return row;
     }
 
-    public MyDataTable(String id, List list, IDataProvider dataProvider, long rowsPerPage) {
+    public TaskDataTable(String id, List list, IDataProvider dataProvider, long rowsPerPage) {
         super(id, list, dataProvider, rowsPerPage);
     }
 }

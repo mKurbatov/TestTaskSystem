@@ -4,7 +4,6 @@ import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.filter.FilterForm;
 import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.form.TextField;
-import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 import org.apache.wicket.model.*;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
@@ -24,11 +23,11 @@ public class HomePage extends WebPage {
 		final TaskProvider taskProvider = new TaskProvider();
 
         List<IColumn> columns = new ArrayList<>();
-        columns.add(new MyPropertyColumn(new Model("Срок выполнения"), "deadLine", "deadLine"));
-        columns.add(new MyPropertyColumn(new Model("Ф.И.О. автора"), "author", "author"));
-        columns.add(new MyPropertyColumn(new Model("Описание"), "description"));
+        columns.add(new DatePropertyColumn(new Model("Срок выполнения"), "deadLine", "deadLine"));
+        columns.add(new TextPropertyColumn(new Model("Ф.И.О. автора"), "author", "author"));
+        columns.add(new TextPropertyColumn(new Model("Описание"), "description"));
 
-        final MyDataTable table = new MyDataTable("datatable", columns, taskProvider, 10);
+        final TaskDataTable table = new TaskDataTable("datatable", columns, taskProvider, 10);
         table.setOutputMarkupId(true);
         table.addTopToolbar(new HeadersToolbar<>(table, taskProvider));
 
