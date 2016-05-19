@@ -1,10 +1,9 @@
 package com.egocorp;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.filter.FilterForm;
 import org.apache.wicket.markup.html.form.CheckBox;
+import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.*;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -35,8 +34,8 @@ public class HomePage extends WebPage {
 
         add(table);
 
-        FilterForm<TaskFilter> filterForm = new FilterForm("filterForm", taskProvider);
-        FilterForm<TaskFilter> filterForm2 = new FilterForm("filterForm2", taskProvider);
+        FilterForm<TaskFilter> filterFormLeft = new FilterForm("filterFormLeft", taskProvider);
+        FilterForm<TaskFilter> filterFormDesc = new FilterForm("filterFormDesc", taskProvider);
 
         TextField dateFrom = new TextField<>("dateFrom", PropertyModel.of(taskProvider, "filterState.dateFrom"));
         TextField dateTo = new TextField<>("dateTo", PropertyModel.of(taskProvider, "filterState.dateTo"));
@@ -44,19 +43,22 @@ public class HomePage extends WebPage {
         CheckBox showDone = new CheckBox("showDone", new PropertyModel<Boolean>(taskProvider, "filterState.showDone"));
         TextField description = new TextField<>("description", PropertyModel.of(taskProvider, "filterState.description"));
 
-        authorName.add(new ChangeBehavior("onkeyup", table));
-        description.add(new ChangeBehavior("onkeyup", table));
-        dateFrom.add(new ChangeBehavior("onchange", table));
-        dateTo.add(new ChangeBehavior("onchange", table));
-        showDone.add(new ChangeBehavior("onchange", table));
+        authorName.add(new ChangeBehavior("keyup", table));
+        description.add(new ChangeBehavior("keyup", table));
+        dateFrom.add(new ChangeBehavior("change", table));
+        dateTo.add(new ChangeBehavior("change", table));
+        showDone.add(new ChangeBehavior("change", table));
 
-        filterForm.add(dateFrom);
-        filterForm.add(dateTo);
-        filterForm.add(authorName);
-        filterForm.add(showDone);
-        filterForm2.add(description);
-        add(filterForm);
-        add(filterForm2);
+        filterFormLeft.add(dateFrom);
+        filterFormLeft.add(dateTo);
+        filterFormLeft.add(authorName);
+        filterFormLeft.add(showDone);
+        filterFormDesc.add(description);
+        add(filterFormLeft);
+        add(filterFormDesc);
 
+        FormAdd form = new FormAdd("FormAdd");
+
+        add(form);
     }
 }

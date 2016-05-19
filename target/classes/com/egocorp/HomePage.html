@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-lg-3" id="filter">
             <h3>Фильтры</h3>
-            <form wicket:id="filterForm">
+            <form wicket:id="filterFormLeft">
                 <div class="row">
                     <div class="col-lg-10">
                         <label for="name-filter">Ф.И.О. автора</label>
@@ -38,7 +38,15 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <input id="date-from" wicket:id="dateFrom" type="text" class="form-control">
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker2'>
+                                        <input id="date-from" class="form-control" wicket:id="dateFrom" type="text"/>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                    </div>
+                                </div>
+                                <!--<input id="date-from" wicket:id="dateFrom" type="text" class="form-control">-->
                             </div>
                         </div>
                         <div class="row">
@@ -90,7 +98,7 @@
                         </ul>
                 </div>
                 <div class="col-lg-6">
-                    <form wicket:id="filterForm2">
+                    <form wicket:id="filterFormDesc">
                         <div class="input-group">
                             <input type="text" class="form-control" wicket:id = "description" placeholder="Поиск по тексту">
                             <div class="input-group-btn">
@@ -112,31 +120,33 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-primary">
-                    <h4 class="modal-title" id="myModalLabel"><img src="./logo.gif" height="40px" width="40px"> Система заявок "Задачка" - Новая заявка</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <label for="new-task-name">Ф.И.О. автора</label>
-                            <input id="new-task-name" type="text" class="form-control" placeholder="Введите имя">
-                        </div>
-                        <div class="col-xs-6">
-                            <label for="new-task-date">Дата выполнения</label>
-                            <input id="new-task-date" type="date" class="form-control">
-                        </div>
+                <form wicket:id="FormAdd">
+                    <div class="modal-header bg-primary">
+                        <h4 class="modal-title" id="myModalLabel"><img src="./logo.gif" height="40px" width="40px"> Система заявок "Задачка" - Новая заявка</h4>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <label for="new-task-desc">Описание</label>
-                            <textarea rows="3" id="new-task-desc" class="form-control"></textarea>
-                        </div>
+                    <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label for="new-task-name">Ф.И.О. автора</label>
+                                    <input id="new-task-name" wicket:id = "author" type="text" class="form-control" placeholder="Введите имя">
+                                </div>
+                                <div class="col-xs-6">
+                                    <label for="new-task-date">Дата выполнения</label>
+                                    <input id="new-task-date" wicket:id = "deadLine" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <label for="new-task-desc">Описание</label>
+                                    <textarea rows="3" id="new-task-desc" wicket:id = "description" class="form-control"></textarea>
+                                </div>
+                            </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Создать заявку</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Отмена</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Создать заявку</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Отмена</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
