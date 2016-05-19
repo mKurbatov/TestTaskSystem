@@ -33,7 +33,7 @@ public class HomePage extends WebPage {
 
         add(table);
 
-        add(new MyPagingNavigator("navigator", table));
+        add(new BootsrapPagingNavigator("navigator", table));
 
         FilterForm<TaskFilter> filterFormLeft = new FilterForm("filterFormLeft", taskProvider);
         FilterForm<TaskFilter> filterFormDesc = new FilterForm("filterFormDesc", taskProvider);

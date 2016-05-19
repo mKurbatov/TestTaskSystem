@@ -7,12 +7,12 @@ import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 /**
  * Created by FormsDeveloper on 5/19/16.
  */
-public class MyPagingNavigator extends PagingNavigator {
-    public MyPagingNavigator(String id, IPageable pageable) {
+public class BootsrapPagingNavigator extends PagingNavigator {
+    public BootsrapPagingNavigator(String id, IPageable pageable) {
         super(id, pageable);
     }
 
-    public MyPagingNavigator(String id, IPageable pageable, IPagingLabelProvider labelProvider) {
+    public BootsrapPagingNavigator(String id, IPageable pageable, IPagingLabelProvider labelProvider) {
         super(id, pageable, labelProvider);
     }
 }
