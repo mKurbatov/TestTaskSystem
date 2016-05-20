@@ -9,9 +9,9 @@ import org.apache.wicket.model.IModel;
 /**
  * Created by FormsDeveloper on 5/18/16.
  */
-public class TaskServicePanel extends Panel {
+public class CellDataButtonPanel extends Panel {
 
-    public TaskServicePanel(String id, IModel model, final Task task) {
+    public CellDataButtonPanel(String id, IModel model, final Task task) {
         super(id, model);
         Label label1 = new Label("desc", model);
         add(label1);

@@ -1,9 +1,6 @@
 package com.egocorp;
 
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -15,7 +12,6 @@ public class Task implements Serializable {
     private String author;
     private String description;
     private boolean done;
-    private static ArrayList<Task> tasks = new ArrayList<>();
 
     public Task(int id, Date deadLine, String author, String description)
     {

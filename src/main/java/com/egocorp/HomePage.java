@@ -20,9 +20,9 @@ public class HomePage extends WebPage {
 		final TaskProvider taskProvider = new TaskProvider();
 
         List<IColumn> columns = new ArrayList<>();
-        columns.add(new DatePropertyColumn(new Model("Срок выполнения"), "deadLine", "deadLine"));
-        columns.add(new AuthorPropertyColumn(new Model("Ф.И.О. автора"), "author", "author"));
-        columns.add(new DescriptionPropertyColumn(new Model("Описание"), "description"));
+        columns.add(new DateColumn(new Model("Срок выполнения"), "deadLine", "deadLine"));
+        columns.add(new AuthorColumn(new Model("Ф.И.О. автора"), "author", "author"));
+        columns.add(new DescriptionColumn(new Model("Описание"), "description"));
 
         final TaskDataTable table = new TaskDataTable("datatable", columns, taskProvider, 10);
         table.setOutputMarkupId(true);

@@ -8,9 +8,9 @@ import org.apache.wicket.model.IModel;
 /**
  * Created by maxim on 5/20/16.
  */
-public class DescriptionPropertyColumn extends PropertyColumn {
+public class DescriptionColumn extends PropertyColumn {
 
-    public DescriptionPropertyColumn(IModel displayModel, String propertyExpression) {
+    public DescriptionColumn(IModel displayModel, String propertyExpression) {
         super(displayModel, propertyExpression);
     }
 
@@ -20,10 +20,10 @@ public class DescriptionPropertyColumn extends PropertyColumn {
         Task task = (Task) rowModel.getObject();
         Component[] components = new Component[1];
         if(!task.isDone()) {
-            components[0] = new TaskServicePanel(componentId, model, task);
+            components[0] = new CellDataButtonPanel(componentId, model, task);
         }
         else {
-            components[0] = new TextLabelPanel(componentId, model, task.isDone());
+            components[0] = new CellDataPanel(componentId, model, task.isDone());
         }
         item.add(components);
     }

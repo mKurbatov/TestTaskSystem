@@ -8,9 +8,9 @@ import org.apache.wicket.model.IModel;
 /**
  * Created by FormsDeveloper on 5/18/16.
  */
-public class DatePropertyColumn extends PropertyColumn {
+public class DateColumn extends PropertyColumn {
 
-    public DatePropertyColumn(IModel displayModel, Object sortProperty, String propertyExpression) {
+    public DateColumn(IModel displayModel, Object sortProperty, String propertyExpression) {
         super(displayModel, sortProperty, propertyExpression);
     }
 
@@ -18,6 +18,6 @@ public class DatePropertyColumn extends PropertyColumn {
     public void populateItem(Item item, String componentId, IModel rowModel) {
         IModel model = this.getDataModel(rowModel);
         Task task = (Task) rowModel.getObject();
-        item.add(new Component[]{new TextLabelPanel(componentId, model, task.isDone())});
+        item.add(new Component[]{new CellDataPanel(componentId, model, task.isDone())});
     }
 }
