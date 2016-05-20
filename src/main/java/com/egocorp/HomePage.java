@@ -1,8 +1,12 @@
 package com.egocorp;
 
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.markup.html.AjaxLink;
+import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.*;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.filter.FilterForm;
 import org.apache.wicket.markup.html.form.CheckBox;
+import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.*;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -37,7 +41,7 @@ public class HomePage extends WebPage {
 
         TextField dateFrom = new TextField<>("dateFrom", PropertyModel.of(taskProvider, "filterState.dateFrom"));
         TextField dateTo = new TextField<>("dateTo", PropertyModel.of(taskProvider, "filterState.dateTo"));
-        TextField authorName = new TextField<>("authorName", PropertyModel.of(taskProvider, "filterState.authorName"));
+        final TextField authorName = new TextField<>("authorName", PropertyModel.of(taskProvider, "filterState.authorName"));
         CheckBox showDone = new CheckBox("showDone", new PropertyModel<Boolean>(taskProvider, "filterState.showDone"));
         TextField description = new TextField<>("description", PropertyModel.of(taskProvider, "filterState.description"));
 
